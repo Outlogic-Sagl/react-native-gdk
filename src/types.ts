@@ -107,7 +107,7 @@ export type Subaccount = {
   bip44_discovered: false
   hidden: false
   name: ""
-  pointer: 0
+  pointer: number
   receiving_id: ""
   required_ca: 0
   type: SubaccountType
@@ -119,7 +119,7 @@ export type ReceiveAddressType = {
   blinding_key: string
   is_confidential: boolean
   is_internal: boolean
-  pointer: boolean
+  pointer: number
   scriptpubkey: string
   subaccount: number
   unconfidential_address: string
@@ -381,4 +381,38 @@ export type PsbtSignDetails = {
   utxos: unknown[]
   // eslint-disable-next-line @typescript-eslint/ban-types
   blinding_nonces?: unknown[]
+}
+
+export type NetworkDetails = {
+  address_explorer_url: string
+  bech32_prefix?: string
+  default_peers?: string[]
+  development: boolean
+  liquid: boolean
+  mainnet: boolean
+  name: string
+  network: string
+  p2pkh_version?: number
+  p2sh_version?: number
+  service_chain_code?: string
+  service_pubkey?: string
+  tx_explorer_url: string
+  wamp_cert_pins?: string[]
+  wamp_onion_url?: string
+  wamp_url?: string
+  electrum_url: string
+  spv_enabled: boolean
+  tls: boolean
+  asset_registry_url: string
+  asset_registry_onion_url: string
+  policy_asset: string
+  ct_exponent: number
+  ct_bits: number
+  bip21_prefix: string
+  server_type: string
+  pin_server_url: string
+  pin_server_public_key: string
+  spv_cross_validation: boolean
+  pin_server_onion_url: string
+  spv_cross_validation_servers: []
 }
